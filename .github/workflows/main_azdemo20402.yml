@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - AzDemo20402
+name: Build and deploy ASP.Net Core app to Azure Web App - azdemo20402
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: '8.x'
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
@@ -51,15 +51,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_8893D399353B481F8C8AA912A04BD406 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_ABA0A2632514488E906AF69334FA3C65 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_90E8B5BFBC9942538F505656F8BAEECC }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E7E37BDC38444FBBB24496E964AF9CD3 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F8D524D618DB4E6699DC2CC408639856 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_911426A103BA4BD489DC148276600810 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'AzDemo20402'
+          app-name: 'azdemo20402'
           slot-name: 'Production'
           package: .
           
